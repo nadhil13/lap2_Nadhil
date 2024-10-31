@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Teori Pemrograman Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 30px;
+    }
+
+    .collapsible {
+      background-color: #e6e6e6;
+      color: #333;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .collapsible:after {
+      content: '\002B';
+      color: #333;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .collapsible.active:after {
+      content: "\2212";
+    }
+
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .messy-mode {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background-color: #f0c8c8;
+      color: #4d4d4d;
+    }
+
+    .messy-mode h1, .messy-mode h2, .messy-mode h3 {
+      text-decoration: underline;
+    }
+
+    .messy-mode p {
+      line-height: 1.2;
+      font-size: 14px;
+    }
+
+    .messy-mode .collapsible {
+      background-color: #e08080;
+      color: #4d4d4d;
+      text-align: right;
+    }
+
+    .messy-mode .collapsible:after {
+      content: '\2212';
+      float: left;
+    }
+
+    .messy-mode .collapsible.active:after {
+      content: "\002B";
+    }
+  </style>
+</head>
+<body class="organized-mode">
+  <div class="container">
+    <h1>LAPORAN TEORI</h1>
+    <h2>Muhammad Nadhil Arsy Al-Wafi | 202331303</h2>
+
+    <button id="mode-switch" class="collapsible">Ubah Mode</button>
+    <div class="content">
+      <p>Klik tombol ini untuk beralih antara mode terorganisir dan berantakan.</p>
+    </div>
+
+    <h3 class="collapsible">Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+    <div class="content">
+      <p>Salah satu komponen utama dari pengembangan web modern adalah CSS dan JavaScript. CSS berfungsi menyematkan gaya visual di halaman web, sementara JavaScript ada untuk menambahkan interaktivitas...</p>
+    </div>
+
+    <h3 class="collapsible">Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+    <div class="content">
+      <p>CSS dan JavaScript dapat diintegrasikan ke dalam halaman web dengan berbagai cara...</p>
+    </div>
+
+    <h3 class="collapsible">Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+    <div class="content">
+      <p>Keuntungan menggunakan CSS:</p>
+      <ul>
+        <li>Meningkatkan Tampilan...</li>
+        <li>Respon Lebih Cepat...</li>
+        <li>Responsif dan Konsisten...</li>
+      </ul>
+      <p>Keuntungan menggunakan JavaScript:</p>
+      <ul>
+        <li>Interaktivitas...</li>
+        <li>Pengolahan Data di Browser...</li>
+        <li>Pengembangan Aplikasi Web Dinamis...</li>
+      </ul>
+    </div>
+
+    <h3 class="collapsible">Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+    <div class="content">
+      <p>Bootstrap adalah framework CSS yang memudahkan pengembangan web dengan menyediakan komponen UI yang siap pakai...</p>
+    </div>
+
+    <h3 class="collapsible">Contoh Penggunaan Bootstrap</h3>
+    <div class="content">
+      <p>Pada contoh ini, kita membuat tombol dengan menggunakan class...</p>
+      <img src="g1.png" alt="Contoh Tombol Bootstrap">
+    </div>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+
+    var modeSwitch = document.getElementById("mode-switch");
+    modeSwitch.addEventListener("click", function() {
+      document.body.classList.toggle("organized-mode");
+      document.body.classList.toggle("messy-mode");
+    });
+  </script>
+</body>
+</html>
